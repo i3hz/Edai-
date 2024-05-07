@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Style the image */
+        img {
+            max-width: 80%;  /* Adjust this value to change the image size */
+            height: auto;
+            display: block;  /* This will put the image on its own line */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* Style the download link */
+        a {
+            display: block;  /* This will put the link on its own line */
+            width: 200px;
+            height: 50px;
+            margin: 20px auto;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+        a:hover {
+            background-color: #45a049;
+        }
+        /* Center the content */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <img src="{{ url_for('static', filename=filename) }}" alt="Filtered Image">
+    <a href="{{ url_for('static', filename=filename) }}" download>Download this image</a>
+</body>
+</html>
