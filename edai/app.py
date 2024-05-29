@@ -26,6 +26,12 @@ def upload_file():
                 img = filter.apply_homomorphic_filter(img)
             elif filter_type == 'water':
                 img = filter.apply_watercolor(img)
+            elif filter_type == 'cartoonify':
+                img = filter.apply_cartoonify(img)
+            elif filter_type == 'sketch':
+                img = filter.apply_sketch(img)
+            elif filter_type == 'edgeDetection':
+                img = filter.apply_edgeDetection(img)
             cv2.imwrite('static/filtered_image.jpg', img)
             return render_template('show_image.html', filename='filtered_image.jpg')
     return render_template('upload_image.html')
